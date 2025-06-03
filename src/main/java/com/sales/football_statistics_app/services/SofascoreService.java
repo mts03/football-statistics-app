@@ -40,7 +40,7 @@ public class SofascoreService {
 
         ResponseModel wrapper = objectMapper.readValue(resp.getBody(), ResponseModel.class);
         TeamsModel team = wrapper.getTeam();
-        PregameFormModel p = team.getPregameForm();
+        PregameFormModel p = wrapper.getPregameForm();
         if (p == null) {
             throw new IllegalStateException("PregameFormModel não encontrado para o timeId: " + teamId);
         }
