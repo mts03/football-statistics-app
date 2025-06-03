@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
 import java.util.List;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PregameFormModel implements Serializable {
     private String avgRating;

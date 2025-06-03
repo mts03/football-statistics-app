@@ -1,5 +1,6 @@
 package com.sales.football_statistics_app.controllers;
 
+import com.sales.football_statistics_app.dtos.SingleTeamDTO;
 import com.sales.football_statistics_app.dtos.TeamStatsDTO;
 import com.sales.football_statistics_app.models.ResponseModel;
 import com.sales.football_statistics_app.models.TeamsModel;
@@ -35,7 +36,13 @@ public class TeamsControllers {
 
     //Método GET para consumir informações seletas de um time pelo seu ID na API
     @GetMapping("/teams/{id}/stats")
-    public TeamStatsDTO stats(@PathVariable("id") long id) throws Exception{
+    public SingleTeamDTO stats(@PathVariable("id") long id) throws Exception{
         return service.getTeamStats(id);
+    }
+
+    //Método GET para retornar informações de dois times pelos seus IDs
+    @GetMapping("/teams/{id1}/{id2}/stats")
+    public TeamStatsDTO twostats(@PathVariable long id1, @PathVariable long id2) throws Exception{
+        return service.getTwoTeamStats(id1, id2);
     }
 }

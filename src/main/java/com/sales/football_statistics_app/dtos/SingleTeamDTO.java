@@ -3,17 +3,13 @@ package com.sales.football_statistics_app.dtos;
 
 import java.util.List;
 
-public class TeamStatsDTO {
+public class SingleTeamDTO {
     private final String avgRating1;
     private final int position1;
-    private final String avgRating2;
-    private final int position2;
 
-    public TeamStatsDTO(String avgRating, int position, String avgRating2, int position2) {
+    public SingleTeamDTO(String avgRating, int position) {
         this.avgRating1 = avgRating;
         this.position1 = position;
-        this.position2 = position2;
-        this.avgRating2 = avgRating2;
     }
 
     // Getters
@@ -25,11 +21,5 @@ public class TeamStatsDTO {
         return position1;
     }
 
-    public String getAvgRating2() {
-        return avgRating2;
-    }
-
-    public int getPosition2() {
-        return position2;
-    }
 }
+
