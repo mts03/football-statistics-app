@@ -6,11 +6,20 @@ import java.io.Serializable;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ResponseModel implements Serializable {
+    private TeamsModel name;
     private TeamsModel team;
     private PregameFormModel pregameForm;
 
     public TeamsModel getTeam() {
         return team;
+    }
+
+    public TeamsModel getName() {
+        return name;
+    }
+
+    public void setName(TeamsModel name) {
+        this.name = name;
     }
 
     public void setTeam(TeamsModel team) {

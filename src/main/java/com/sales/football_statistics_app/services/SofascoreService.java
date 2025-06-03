@@ -39,7 +39,7 @@ public class SofascoreService {
         TeamsModel team1 = wrapper1.getTeam();
         PregameFormModel p1 = wrapper1.getPregameForm();
 
-        return new SingleTeamDTO(p1.getAvgRating(), p1.getPosition());
+        return new SingleTeamDTO(team1.getName(), p1.getAvgRating(), p1.getPosition());
     }
 
     public TeamStatsDTO getTwoTeamStats(long team1Id, long team2Id) throws JsonProcessingException {
@@ -65,6 +65,6 @@ public class SofascoreService {
         TeamsModel team2 = wrapper2.getTeam();
         PregameFormModel p2 = wrapper2.getPregameForm();
 
-        return new TeamStatsDTO(p1.getAvgRating(), p1.getPosition(), p2.getAvgRating(), p2.getPosition());
+        return new TeamStatsDTO(team1.getName(), p1.getAvgRating(), p1.getPosition(), team2.getName(), p2.getAvgRating(), p2.getPosition());
     }
 }
