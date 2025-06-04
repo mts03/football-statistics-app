@@ -65,6 +65,7 @@ public class SofascoreService {
         TeamsModel team2 = wrapper2.getTeam();
         PregameFormModel p2 = wrapper2.getPregameForm();
 
-        return new TeamStatsDTO(team1.getName(), p1.getAvgRating(), p1.getPosition(), team2.getName(), p2.getAvgRating(), p2.getPosition());
+        return new TeamStatsDTO(team1.getName(), team1.getTournament().getName(), p1.getAvgRating(), p1.getForm(),
+                team2.getName(), team2.getTournament().getName(), p2.getAvgRating(), p2.getForm());
     }
 }

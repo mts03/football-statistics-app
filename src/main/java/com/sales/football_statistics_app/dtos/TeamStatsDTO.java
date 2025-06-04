@@ -6,18 +6,23 @@ import java.util.List;
 public class TeamStatsDTO {
     private final String name1;
     private final String avgRating1;
-    private final int position1;
+    private final List<String> form1;
     private final String name2;
     private final String avgRating2;
-    private final int position2;
+    private final List<String> form2;
+    private final String tournament1;
+    private final String tournament2;
 
-    public TeamStatsDTO(String name1, String avgRating, int position, String name2, String avgRating2, int position2) {
+    public TeamStatsDTO(String name1, String tournament1, String avgRating, List<String> form1,
+                        String name2, String tournament2, String avgRating2, List<String> form2) {
         this.avgRating1 = avgRating;
         this.name1 = name1;
         this.name2 = name2;
-        this.position1 = position;
-        this.position2 = position2;
+        this.form1 = form1;
+        this.form2 = form2;
         this.avgRating2 = avgRating2;
+        this.tournament1 = tournament1;
+        this.tournament2 = tournament2;
     }
 
     // Getters
@@ -25,16 +30,24 @@ public class TeamStatsDTO {
         return avgRating1;
     }
 
-    public int getPosition1() {
-        return position1;
+    public String getTournament1() {
+        return tournament1;
+    }
+
+    public String getTournament2() {
+        return tournament2;
+    }
+
+    public List<String> getForm1() {
+        return form1;
     }
 
     public String getAvgRating2() {
         return avgRating2;
     }
 
-    public int getPosition2() {
-        return position2;
+    public List<String> getForm2() {
+        return form2;
     }
 
     public String getName1() {

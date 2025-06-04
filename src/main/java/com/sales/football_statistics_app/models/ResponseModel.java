@@ -9,9 +9,18 @@ public class ResponseModel implements Serializable {
     private TeamsModel name;
     private TeamsModel team;
     private PregameFormModel pregameForm;
+    private TeamsModel tournament;
 
     public TeamsModel getTeam() {
         return team;
+    }
+
+    public TeamsModel getTournament() {
+        return tournament;
+    }
+
+    public void setTournament(TeamsModel tournament) {
+        this.tournament = tournament;
     }
 
     public TeamsModel getName() {

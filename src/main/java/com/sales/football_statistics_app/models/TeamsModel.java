@@ -14,6 +14,7 @@ public class TeamsModel implements Serializable {
     private String gender;
     private String nameCode;
     private String fullName;
+    private TournamentModel tournament;
     private PregameFormModel pregameForm;
 
     public long getId() {
@@ -22,6 +23,14 @@ public class TeamsModel implements Serializable {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public TournamentModel getTournament() {
+        return tournament;
+    }
+
+    public void setTournament(TournamentModel tournament) {
+        this.tournament = tournament;
     }
 
     public String getName() {
