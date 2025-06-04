@@ -34,15 +34,15 @@ public class TeamsControllers {
     @Autowired
     private SofascoreService service;
 
-    //Método GET para consumir informações seletas de um time pelo seu ID na API
-    @GetMapping("/teams/{id}/stats")
-    public SingleTeamDTO stats(@PathVariable("id") long id) throws Exception{
-        return service.getTeamStats(id);
-    }
-
     //Método GET para retornar informações de dois times pelos seus IDs
     @GetMapping("/teams/{id1}/{id2}/stats")
     public TeamStatsDTO twostats(@PathVariable long id1, @PathVariable long id2) throws Exception{
         return service.getTwoTeamStats(id1, id2);
+    }
+
+    //Método GET para retornar time pelo nome
+    @GetMapping("/teams/{name}")
+    public SingleTeamDTO getteam(@PathVariable String name) throws Exception{
+        return service.getTeamId(name);
     }
 }

@@ -1,31 +1,48 @@
 // src/main/java/com/sales/football_statistics_app/dtos/TeamStatsDTO.java
 package com.sales.football_statistics_app.dtos;
 
-import java.util.List;
-
 public class SingleTeamDTO {
-    private final String avgRating1;
-    private final int position1;
-    private final String name;
+    private long id;
+    private String name;
+    private String nameCode;
+    private String slug;
 
-    public SingleTeamDTO(String name, String avgRating, int position) {
-        this.avgRating1 = avgRating;
-        this.position1 = position;
-        this.name = name;
+    public SingleTeamDTO(long id) {
+        this.id = id;
     }
 
     // Getters
-    public String getAvgRating1() {
-        return avgRating1;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getPosition1() {
-        return position1;
+    public void setName(String name) {
+        this.name = name;
     }
 
+    public String getNameCode() {
+        return nameCode;
+    }
+
+    public void setNameCode(String nameCode) {
+        this.nameCode = nameCode;
+    }
+
+    public String getSlug() {
+        return slug;
+    }
+
+    public void setSlug(String slug) {
+        this.slug = slug;
+    }
 }
 

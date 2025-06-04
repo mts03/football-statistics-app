@@ -24,8 +24,8 @@ public class SofascoreService {
     private final String API_HOST = "sofascore.p.rapidapi.com";
     private final String API_KEY = "9f7cb6c4e3msh2c3610f5629bb39p14e2cejsn02c95c403107";
 
-    public SingleTeamDTO getTeamStats(long team1Id) throws Exception {
-        String url1 = "https://sofascore.p.rapidapi.com/teams/detail?teamId=" + team1Id;
+    public SingleTeamDTO getTeamId(String name) throws Exception {
+        String url1 = "https://sofascore.p.rapidapi.com/search?q="+ name + "&type=all&page=0";
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("X-RapidAPI-Host", API_HOST);
@@ -36,10 +36,8 @@ public class SofascoreService {
 
         //Time 1
         ResponseModel wrapper1 = objectMapper.readValue(resp1.getBody(), ResponseModel.class);
-        TeamsModel team1 = wrapper1.getTeam();
-        PregameFormModel p1 = wrapper1.getPregameForm();
-
-        return new SingleTeamDTO(team1.getName(), p1.getAvgRating(), p1.getPosition());
+        TeamsModel team1 = wrapper1.getResults().get(0).getEntity();
+        return new SingleTeamDTO(team1.getId());
     }
 
     public TeamStatsDTO getTwoTeamStats(long team1Id, long team2Id) throws JsonProcessingException {
